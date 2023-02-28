@@ -1,6 +1,8 @@
 import { PeopleAlt } from "@mui/icons-material"
 import { TextField } from "@mui/material"
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { Link } from "react-router-dom";
+import {IconButton} from "@mui/material";
 const NavBar = () => {
     const hello = () => {
         alert("chao em")
@@ -37,8 +39,14 @@ const NavBar = () => {
                         marginLeft: "10px"
                     }}
                 />
-                <PeopleAlt color="white" />
-                <AddShoppingCartIcon />
+                <IconButton color="primary" aria-label="h1j" component="h">
+                    <Link to={"/login"}></Link>
+                    <PeopleAlt color="white" />
+                </IconButton>
+                <IconButton color="primary" aria-label="upload picture" component="label">
+                    <AddShoppingCartIcon />
+                </IconButton>
+
             </nav>
         </div>
     )
