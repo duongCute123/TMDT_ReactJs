@@ -31,8 +31,6 @@ const InfoProduct = (props) => {
                     <div className="orther">
                         <Button data-toggle="modal" data-target="#modelId" variant="outlined" startIcon={<ShoppingCartCheckoutIcon />}>
                             Launch
-
-
                             <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
