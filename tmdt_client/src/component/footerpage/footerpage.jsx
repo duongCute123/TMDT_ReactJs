@@ -6,7 +6,9 @@ const FooterPage=()=>{
         }
     ]
     return(
-        <div className="footer-page col-sm-12 row">
+        <div className="footer-page col-sm-12 row" style={{
+            
+        }}>
             <div className="footer-left col-sm-4">
                     <p>
                         Rất chi là wellcome bạn ghé thăm trang web nhé.Mong bạn mua sản phẩm ủng hộ chúng tôi

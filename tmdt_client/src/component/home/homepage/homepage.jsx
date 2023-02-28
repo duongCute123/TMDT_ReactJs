@@ -3,7 +3,7 @@ import anh2 from "../../../module.image/sp2.jpg"
 const HomePage = () => {
     return (
         <div className="homepage container-fluid">
-            <h1>SẢN PHẨM</h1>
+            <h1 style={{textAlign:"center",color:"red",marginBottom:"2%",marginTop:"2%"}}>Sản phẩm nhiều Phụ huynh lựa chọn</h1>
             <div class="row">
                 <div class="col-md-4">
                     <div class="thumbnail">
