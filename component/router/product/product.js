@@ -15,6 +15,7 @@ router.route("/getproduct").get(function (req, res) {
     conn.query(sql, function (err, product) {
         if (err) {
             res.status(400).json("Lỗi lây sản phẩm")
+            console.log(err);
         } else {
             res.status(200).json(product)
         }

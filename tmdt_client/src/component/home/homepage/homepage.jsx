@@ -6,6 +6,7 @@ import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import { useEffect, useState } from "react"
 import { Button } from "@mui/material";
+import {TextField} from "@mui/material";
 import axios from "axios"
 import { useSelector, useDispatch } from "react-redux";
 import { add_shoping_cart, xoa_cart, DecreaseQuantity, IncreaseQuantity } from "../../action/addcart";
@@ -21,6 +22,7 @@ const HomePage = () => {
     const sLuong = useSelector(state => state.shoping.numberCart)
     const mangProduct = useSelector(state => state.shoping.Cart)
     const distpatch = useDispatch()
+    const [query, setQuery] = useState("")
     useEffect(() => {
         axios.get(`http://localhost:8000/getProduct`)
             .then(res => {
@@ -34,9 +36,22 @@ const HomePage = () => {
     return (
         <div className="homepage">
             <HeaderPage />
-            <h1 style={{ textAlign: "center", color: "red", marginBottom: "2%", marginTop: "2%" }}>Sản phẩm nhiều Phụ huynh lựa chọn</h1>
+            <TextField
+                name="query"
+                value={query}
+                id="standard-search"
+                label="Nhập tên sản phẩm cần tìm kiếm"
+                type="search"
+                onChange={(e)=>setQuery(e.target.value)}
+                variant="standard"
+                style={{
+                    width: "35%",
+                    marginLeft: "10px"
+                }}
+            />
+            <h1 style={{ textAlign: "center", color: "red", marginBottom: "2%", marginTop: "2%" }}>Sản phẩm nhiều chị em lựa chọn</h1>
             {
-                list.map((lists) => {
+                list.filter(lists => lists.tenSp.toLowerCase().includes(query)).map((lists) => {
                     return (
                         <div className="container-fluid" key={lists.id}>
                             <div className="list-product row" style={{ float: "left" }}>
