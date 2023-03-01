@@ -7,7 +7,7 @@ const FooterPage=()=>{
     ]
     return(
         <div className="footer-page col-sm-12 row" style={{
-            
+            width:"100%"
         }}>
             <div className="footer-left col-sm-4">
                     <p>
