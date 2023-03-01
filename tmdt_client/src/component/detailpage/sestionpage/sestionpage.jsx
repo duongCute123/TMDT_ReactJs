@@ -24,7 +24,9 @@ const InfoProduct = (props) => {
     }, [props.detail])
     console.log(product);
     return (
-        <div className="info-product container-fluid">
+        <div className="info-product container-fluid" style={{
+            marginTop:"10px"
+        }}>
             {
                 product.map((list) => {
                     return (
