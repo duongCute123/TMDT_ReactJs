@@ -2,10 +2,12 @@ import { PeopleAlt } from "@mui/icons-material"
 import { TextField } from "@mui/material"
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {IconButton} from "@mui/material";
 const NavBar = () => {
+    const navigation=useNavigate()
     const hello = () => {
-        alert("chao em")
+        navigation("/login")
     }
     return (
         <div className="nav-bar" style={{ alignItems: "center" }}>
@@ -39,11 +41,10 @@ const NavBar = () => {
                         marginLeft: "10px"
                     }}
                 />
-                <IconButton color="primary" aria-label="h1j" component="h">
-                    <Link to={"/login"}></Link>
+                <IconButton onClick={hello} color="primary" aria-label="h1j" component="h">
                     <PeopleAlt color="white" />
                 </IconButton>
-                <IconButton color="primary" aria-label="upload picture" component="label">
+                <IconButton onClick={()=>navigation("/shopingcart")} color="primary" aria-label="upload picture" component="label">
                     <AddShoppingCartIcon />
                 </IconButton>
 

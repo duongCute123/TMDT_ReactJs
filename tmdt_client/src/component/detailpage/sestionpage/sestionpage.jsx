@@ -7,9 +7,11 @@ import { Button } from "@mui/material"
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import ModelItem from "./modelItem/modeliterm"
+import {useNavigate} from "react-router-dom"
 const InfoProduct = (props) => {
+    const navigator=useNavigate()
     const getmodel = () => {
-        console.log("hello");
+        navigator()
     }
     const [product, setProduct] = useState([])
     useEffect(() => {
@@ -34,7 +36,7 @@ const InfoProduct = (props) => {
                                     <p>Giá sản phẩm:{list.giaSP}</p>
                                     <p>Chọn số lượng muốn mua</p>
                                     <div className="orther">
-                                        <Button onClick={getmodel} data-toggle="modal" data-target="#modelId" variant="outlined" startIcon={<ShoppingCartCheckoutIcon />}>
+                                        <Button data-toggle="modal" data-target="#modelId" variant="outlined" startIcon={<ShoppingCartCheckoutIcon />}>
                                             Launch
                                             <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">

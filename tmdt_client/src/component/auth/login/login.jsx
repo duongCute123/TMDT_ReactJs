@@ -6,7 +6,7 @@ const Login=()=>{
         ussername:"",
         passwords:""
     }
-    const h=()=>{}
+    const dangNhap=()=>{}
     const [forms,setForm]=useState(list)
     const {ussername,passwords}=forms
     return(
