@@ -1,20 +1,29 @@
-.infos-product{
-    border:  1px solid black;
+.infos-product {
+    border: 1px solid black;
     width: 400px;
     margin: 10%;
     margin-left: 50px;
+    border-radius: 5% 5% 5% 5%;
+    box-shadow: 0 4px 6px -1px black;
 }
-.infos-product img{
+
+.infos-product img {
     width: 300px;
     margin-top: 2%;
     margin-left: 25px;
 
 }
-.footer-page{
+
+img:hover {
+    transform: scale(1.1);
+}
+
+.footer-page {
     border-top: 1px solid red;
     width: 100%;
 }
-.action{
+
+.action {
     border: 1px;
-    justify-content: space-between  ;
+    justify-content: space-between;
 }

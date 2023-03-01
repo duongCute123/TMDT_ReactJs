@@ -6,7 +6,7 @@ import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import { useEffect, useState } from "react"
 import { Button } from "@mui/material";
-import {TextField} from "@mui/material";
+import { TextField } from "@mui/material";
 import axios from "axios"
 import { useSelector, useDispatch } from "react-redux";
 import { add_shoping_cart, xoa_cart, DecreaseQuantity, IncreaseQuantity } from "../../action/addcart";
@@ -42,7 +42,7 @@ const HomePage = () => {
                 id="standard-search"
                 label="Nhập tên sản phẩm cần tìm kiếm"
                 type="search"
-                onChange={(e)=>setQuery(e.target.value)}
+                onChange={(e) => setQuery(e.target.value)}
                 variant="standard"
                 style={{
                     width: "35%",
@@ -56,8 +56,8 @@ const HomePage = () => {
                         <div className="container-fluid" key={lists.id}>
                             <div className="list-product row" style={{ float: "left" }}>
                                 <div className="infos-product">
+                                    <img src={lists.anh} alt={list.tenSp} />
                                     <Link to={"/detailproduct/" + lists.id}>
-                                        <img src={lists.anh} alt={list.tenSp} />
                                         <div className="chitiet">
                                             <h1>{lists.tenSp}</h1>
                                             <p>Gia:${lists.giaSP}</p>
