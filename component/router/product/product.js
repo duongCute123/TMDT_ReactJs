@@ -34,6 +34,7 @@ router.route("/seachproduct/:id").get(function (req, res) {
         }
     })
 })
+// Tìm sản phẩm theo tên 
 //Cập nhật sản phẩm
 router.route("/updateproduct/:id").post(function (req, res) {
     var id=req.params.id

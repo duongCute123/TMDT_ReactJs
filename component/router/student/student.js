@@ -9,10 +9,11 @@ const { json } = require('body-parser')
 app.use(cors())
 router.route("/addUser").post(function (req,res) {
     var data=req.body
-    var sql="insert into student set first_name=?,last_name=?,email=?,ussername=?,paswords=? value "+data
-    conn.query(sql,function (err,student) {
+    var sql="insert into student set ? "
+    conn.query(sql,data,function (err,student) {
         if (err) {
             res.status(400).json("Lỗi lấy dữ liệu")
+            console.log(err);
         }else{
             res.status(200).json(student)
         }
