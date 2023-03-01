@@ -30,10 +30,10 @@ const HomePage = () => {
             {
                 list.map((lists) => {
                     return (
-                        <div className="container-fluid">
+                        <div className="container-fluid" key={lists.id}>
                             <div className="list-product row" style={{ float:"left" }}>
                                 <div className="infos-product">
-                                    <Link to={"/detailproduct/" + `${id}`}>
+                                    <Link to={"/detailproduct/"+lists.id}>
                                         <img src={lists.anh} alt={list.tenSp} />
                                         <div className="chitiet">
                                             <h1>{lists.tenSp}</h1>

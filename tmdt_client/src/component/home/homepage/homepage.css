@@ -11,7 +11,7 @@
 
 }
 .footer-page{
-    border: 1px solid black;
+    border-top: 1px solid red;
     width: 100%;
 }
 .action{

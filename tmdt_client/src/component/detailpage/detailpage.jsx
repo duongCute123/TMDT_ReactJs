@@ -7,22 +7,23 @@ import { useParams } from "react-router-dom";
 const DetailPage = (props) => {
     var {id} = useParams()
     console.log(id);
-    const [SinhVien, setSinhVien] = useState([])
+    const [product, setProduct] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:8000/edit/'+id)
+        axios.get('http://localhost:8000/seachproduct/'+id)
             .then(res =>{
-                setSinhVien(res.data)
+                setProduct(res.data)
+                console.log(res.data);
             } )
             .catch(err => console.log(err))
     }, [])
     const Tim = () => {
-        axios.get('http://localhost:8000/edit/' + id)
+        axios.get('http://localhost:8000/seachproduct/'+id)
             .then(res => console.log(res.data))
             .catch(err => console.log(err))
     }
     return (
         <div className="detailpage">
-            <InfoProduct detail={SinhVien} />
+            <InfoProduct detail={product} />
         </div>
     )
 }

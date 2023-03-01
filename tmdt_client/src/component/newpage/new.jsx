@@ -1,5 +1,6 @@
 import FooterPage from "../footerpage/footerpage"
-
+import { useEffect,useState } from "react"
+import axios from "axios"
 const News=()=>{
     return(
         <div className="news">

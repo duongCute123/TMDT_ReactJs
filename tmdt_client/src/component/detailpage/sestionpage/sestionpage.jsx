@@ -9,62 +9,74 @@ import LocalMallIcon from '@mui/icons-material/LocalMall';
 import ModelItem from "./modelItem/modeliterm"
 const InfoProduct = (props) => {
     const getmodel = () => {
-        return <ModelItem />
+        console.log("hello");
     }
-    const [SinhVien, setSinhVien] = useState([])
+    const [product, setProduct] = useState([])
     useEffect(() => {
-        setSinhVien(props.detail)
+        setProduct(props.detail)
     }, [props.detail])
+    console.log(product);
     return (
         <div className="info-product container-fluid">
-            <div className="row">
-                <div className="info-left col-sm-6">
-                    <img style={{
-                        width: "400px", objectFit: "cover"
-                    }} src={anh1} alt="" />
-                </div>
-                <div className="info-right col-sm-6">
-                    <h2>Tên sản phẩm</h2>
-                    <p>Tình trạng:Còn hàng</p>
-                    <p>Giá sản phẩm</p>
-                    <p>Chọn số lượng muốn mua</p>
-                    <div className="orther">
-                        <Button data-toggle="modal" data-target="#modelId" variant="outlined" startIcon={<ShoppingCartCheckoutIcon />}>
-                            Launch
-                            <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Modal title</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            Body
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Save</button>
-                                        </div>
+            {
+                product.map((list) => {
+                    return (
+                        <div>
+                            <div className="row">
+                                <div className="info-left col-sm-6">
+                                    <img style={{
+                                        width: "400px", objectFit: "cover"
+                                    }} src={list.anh} alt="" />
+                                </div>
+                                <div className="info-right col-sm-6">
+                                    <h2>{list.tenSp}</h2>
+                                    <p>Tình trạng:Còn hàng</p>
+                                    <p>Giá sản phẩm:{list.giaSP}</p>
+                                    <p>Chọn số lượng muốn mua</p>
+                                    <div className="orther">
+                                        <Button onClick={getmodel} data-toggle="modal" data-target="#modelId" variant="outlined" startIcon={<ShoppingCartCheckoutIcon />}>
+                                            Launch
+                                            <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title">Modal title</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Body
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary">Save</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </Button>
+                                        <Button variant="contained" endIcon={<LocalMallIcon />}>
+                                            Buy
+                                        </Button>
                                     </div>
                                 </div>
                             </div>
-                        </Button>
-                        <Button variant="contained" endIcon={<LocalMallIcon />}>
-                            Buy
-                        </Button>
-                    </div>
-                </div>
-            </div>
-            <div className="">
-                <h1>
-                    Thông tin chi tiết sản phẩm
-                </h1>
-            </div>
-            <div className="sp-lienquan">
-            </div>
-            <FooterPage />
+                            <div className="">
+                                <h1>
+                                    Thông tin chi tiết sản phẩm
+                                </h1>
+                                <p>
+                                    {list.thongTinSp}
+                                </p>
+                            </div>
+                            <div className="sp-lienquan">
+                            </div>
+                            <FooterPage />
+                        </div>
+                    )
+                })
+            }
         </div>
     )
 }
