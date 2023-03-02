@@ -5,6 +5,7 @@ var conn=require("./component/configDb/configdb")
 var route=require("./component/router/student/student")
 var routeAuth=require("./component/router/auth/login")
 var routerProduct=require("./component/router/product/product")
+var routerOder=require("./component/router/oder/oder")
 var cors = require('cors')
 var bodyParse = require("body-parser")
 const { json } = require('body-parser')
@@ -19,6 +20,7 @@ app.get("/hello",function (req,res) {
 app.use("",route)
 app.use("",routeAuth)
 app.use("",routerProduct)
+app.use("",routerOder)
 var service=app.listen(8000,function (host,port) {
     var host=service.address().address
     var port=service.address().port

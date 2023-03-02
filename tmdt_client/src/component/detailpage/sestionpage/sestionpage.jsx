@@ -43,19 +43,16 @@ const InfoProduct = (props) => {
                                     <p>Giá sản phẩm:{list.giaSP}</p>
                                     <p>Chọn số lượng muốn mua</p>
                                     <div className="orther">
-                                        <Button data-toggle="modal" onClick={()=>dispatch(add_shoping_cart(list))} data-target="#modelId" variant="outlined" startIcon={<ShoppingCartCheckoutIcon />}>
-                                            Launch
+                                        <Button style={{margin:"4px"}} data-toggle="modal" onClick={()=>dispatch(add_shoping_cart(list))} data-target="#modelId" variant="outlined" startIcon={<ShoppingCartCheckoutIcon />}>
+                                            Add Card
                                             <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title">Modal title</h5>
+                                                            <h5 class="modal-title">Thêm thành công sản phẩm nhé bạn</h5>
                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            Body
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

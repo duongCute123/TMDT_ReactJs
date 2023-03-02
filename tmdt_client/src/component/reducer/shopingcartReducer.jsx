@@ -1,7 +1,6 @@
 const initStance = {
     numberCart: 0,
     Cart: [
-        {id:1,quantity:1,tenSp:"Iphon 15",anh:"Chiu",giaSP:10000}
     ]
 }
 const ShopingCart = (state = initStance, action) => {

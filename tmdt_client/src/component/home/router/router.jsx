@@ -8,6 +8,7 @@ import Product from "../../product/product"
 import HomePage from "../homepage/homepage"
 import HeaderPage from "../menu/headermenu/headermenu"
 import NavBar from "../menu/menu"
+import Checkout from "../../checkout/checkout"
 import ShoppingCarrt from "../../cart/addproduct"
 const Routers = () => {
     return (
@@ -19,9 +20,10 @@ const Routers = () => {
                     <Route exact path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/detailproduct/:id" element={<DetailPage />} />
-                    <Route path="/new" element={<News/>}/>
-                    <Route path="/product" element={<Product/>}/>
-                    <Route path="/shopingcart" element={<ShoppingCarrt/>}/>
+                    <Route path="/new" element={<News />} />
+                    <Route path="/product" element={<Product />} />
+                    <Route path="/shopingcart" element={<ShoppingCarrt />} />
+                    <Route path="/checkout" element={<Checkout />} />
                 </Routes>
             </BrowserRouter>
         </div>

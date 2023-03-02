@@ -54,7 +54,7 @@ const ShoppingCarrt = () => {
             <Countries items={items}/>
             <Button style={{
                 marginLeft:"80%"
-            }} startIcon={<Add/>}><Link to={"/home"}>Thanh Toán</Link></Button>
+            }} startIcon={<Add/>}><Link to={"/checkout"}>Thanh Toán</Link></Button>
         </div>
     )
 }

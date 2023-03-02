@@ -57,14 +57,18 @@ const HomePage = () => {
                             <div className="list-product row" style={{ float: "left" }}>
                                 <div className="infos-product">
                                     <img src={lists.anh} alt={list.tenSp} />
-                                    <Link to={"/detailproduct/" + lists.id}>
+                                    <Link style={{listStyle:"none"}} to={"/detailproduct/" + lists.id}>
                                         <div className="chitiet">
-                                            <h1>{lists.tenSp}</h1>
+                                            <h4>{lists.tenSp}</h4>
                                             <p>Gia:${lists.giaSP}</p>
                                         </div>
                                     </Link>
-                                    <div className="action">
-                                        <Button onClick={() => distpatch(add_shoping_cart(lists))} variant="outlined" startIcon={<ShoppingCartCheckoutIcon />}>
+                                    <div className="action" style={{
+                                        justifyContent:"space-between",
+                                        marginBottom:"2%",
+                                        padding:"4px"
+                                    }}>
+                                        <Button style={{margin:"4px"}} onClick={() => distpatch(add_shoping_cart(lists))} variant="outlined" startIcon={<ShoppingCartCheckoutIcon />}>
                                             ADD CARD
                                         </Button>
                                         <Button variant="contained" endIcon={<LocalMallIcon />}>
