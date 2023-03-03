@@ -1,24 +1,29 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import { AuthContext } from "../context/authContetex";
+function Lay() {
+    const curent = useContext(AuthContext)
+    return curent
+}
 const NavNar = () => (
     <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <Link class="navbar-brand" to="/home">PUG HOTPOT</Link>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
             aria-expanded="false" aria-label="Toggle navigation"></button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+                    <Link class="nav-link" to="/home">Home <span class="sr-only">(current)</span></Link>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/login">Login</a>
+                    <Link class="nav-link" to="/order">Danh Sách Hoá Đơn</Link>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <Link class="nav-link dropdown-toggle" to="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Thống kê doanh thu</Link>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
-                        <a class="dropdown-item" href="#">Action 1</a>
-                        <a class="dropdown-item" href="#">Action 2</a>
+                        <Link class="dropdown-item" to="/totalnam">Doanh thu theo năm</Link>
+                        <Link class="dropdown-item" to="/totalmonth">Doanh thu tháng</Link>
                     </div>
                 </li>
             </ul>

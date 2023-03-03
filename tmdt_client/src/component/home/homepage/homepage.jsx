@@ -18,7 +18,7 @@ const HomePage = () => {
     var { id } = useParams()
     const [list, setList] = useState([])
     const [currentPageData, setCurrentPageData] = useState(new Array(2).fill());
-    const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+    const items = [];
     const sLuong = useSelector(state => state.shoping.numberCart)
     const mangProduct = useSelector(state => state.shoping.Cart)
     const distpatch = useDispatch()
@@ -55,20 +55,22 @@ const HomePage = () => {
                     return (
                         <div className="container-fluid" key={lists.id}>
                             <div className="list-product row" style={{ float: "left" }}>
-                                <div className="infos-product">
+                                <div className="infos-product" data-aos="flip-left"
+                                    data-aos-easing="ease-out-cubic"
+                                    data-aos-duration="2000">
                                     <img src={lists.anh} alt={list.tenSp} />
-                                    <Link style={{listStyle:"none"}} to={"/detailproduct/" + lists.id}>
+                                    <Link style={{ listStyle: "none" }} to={"/detailproduct/" + lists.id}>
                                         <div className="chitiet">
                                             <h4>{lists.tenSp}</h4>
                                             <p>Gia:${lists.giaSP}</p>
                                         </div>
                                     </Link>
                                     <div className="action" style={{
-                                        justifyContent:"space-between",
-                                        marginBottom:"2%",
-                                        padding:"4px"
+                                        justifyContent: "space-between",
+                                        marginBottom: "2%",
+                                        padding: "4px"
                                     }}>
-                                        <Button style={{margin:"4px"}} onClick={() => distpatch(add_shoping_cart(lists))} variant="outlined" startIcon={<ShoppingCartCheckoutIcon />}>
+                                        <Button style={{ margin: "4px" }} onClick={() => distpatch(add_shoping_cart(lists))} variant="outlined" startIcon={<ShoppingCartCheckoutIcon />}>
                                             ADD CARD
                                         </Button>
                                         <Button variant="contained" endIcon={<LocalMallIcon />}>
@@ -81,6 +83,20 @@ const HomePage = () => {
                     )
                 })
             }
+            <div>
+                {currentPageData.map((item) => (
+                    <div>
+                        <h3>Item #{item}</h3>
+                    </div>
+                ))}
+
+                <SweetPagination
+                    currentPageData={setCurrentPageData}
+                    dataPerPage={10}
+                    getData={items}
+                    navigation={true}
+                />
+            </div>
             <FooterPage />
         </div>
     )

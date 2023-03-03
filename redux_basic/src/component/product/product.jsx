@@ -1,11 +1,14 @@
 import axios from "axios";
 import AddProduct from "./addproduct";
+import { TextField } from "@mui/material";
+import { useState } from "react";
 import React from "react";
 import { BrowserRouter, Router, Routes, Link, NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 const Product = () => {
     const [data, setData] = React.useState([])
+    const [query, setQuery] = useState("")
     useEffect(() => {
         axios.get("http://localhost:8000/getproduct")
             .then(res => {
@@ -21,14 +24,31 @@ const Product = () => {
 
     }
     return (
-        <div className="product">
-            <div className="btn-themsp">
-                <Link to={'/themsp'}>Thêm sản phẩm</Link>
+        <div className="product container-fluid">
+            <div className="btn-themsp  row">
+                <div className="tim col-sm-6">
+                <TextField
+                    name="query"
+                    value={query}
+                    id="standard-search"
+                    label="Nhập tên sản phẩm cần tìm kiếm"
+                    type="search"
+                    onChange={(e) => setQuery(e.target.value)}
+                    variant="standard"
+                    style={{
+                        width: "35%",
+                        marginLeft: "10px"
+                    }}
+                />
+                </div>
+                <div className="add col-sm-6">
+                    <Link to={'/themsp'}>Thêm sản phẩm</Link>
+                </div>
             </div>
             <div className="list-product">
                 <h1 className="col-sm-12">Hiển thị danh sách sản phẩm</h1>
                 {
-                    data.map((list) => {
+                    data.filter(list => list.tenSp.toLowerCase().includes(query)).map((list) => {
                         return (
                             <table class="table table-striped table-inverse table-responsive">
                                 <thead class="thead-inverse">

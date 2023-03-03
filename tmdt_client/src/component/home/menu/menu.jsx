@@ -35,7 +35,7 @@ const NavBar = () => {
     }
     console.log(list.filter(item=>item.tenSp.toLowerCase().includes(list)));
     return (
-        <div className="nav-bar" style={{ alignItems: "center" }}>
+        <div className="nav-bar" style={{ alignItems: "center",position:"relative",top:"0px" }}>
             <nav class="navbar navbar-expand-md bg-dark navbar-dark">
                 <Link class="navbar-brand" to="/home">PUG HOTPAG</Link>
 
