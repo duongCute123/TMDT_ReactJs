@@ -41,7 +41,7 @@ const Login = () => {
                     </div>
                     <div className="form-group">
                         <label htmlFor="passwords">Nhập mật khẩu đăng nhập</label>
-                        <input type="text" placeholder="Vui lòng nhập mật khẩu" name="passwords" className="form-control" value={passwords} onChange={layussername} />
+                        <input type="password" placeholder="Vui lòng nhập mật khẩu" name="passwords" className="form-control" value={passwords} onChange={layussername} />
                     </div>
                     <input type="submit" onClick={postDL} value="Login" />
                     <input type="button" value="Cancel" />
